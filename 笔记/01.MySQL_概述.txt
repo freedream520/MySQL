@@ -114,6 +114,23 @@ source c:\aa.sql(后边不能要分号，要的话就错了！！！)
 --查看mysql支持哪几种数据库引擎
 show engines;
 
+--查看mysql数据库连接数、并发数
+show status like 'Threads%';
++-------------------+-------+
+| Variable_name     | Value |
++-------------------+-------+
+| Threads_cached    | 16    |
+| Threads_connected | 38    |   ###这个数值指的是打开的连接数
+| Threads_created   | 54    |
+| Threads_running   | 12    |   ###这个数值指的是激活的连接数
++-------------------+-------+
+
+--查询数据库当前设置的最大连接数
+show variables like '%max_connections%';
+
+--显示当前正在执行的mysql连接
+show processlist;
+
 -----------------------------------------------------------------
 MySQL客户端开发工具：
 mysql-front + 支持中文不太多
